@@ -51,14 +51,14 @@ public class PhoneBookTest extends BaseTest {
 
         Allure.step("takes screenshot and waits 3 seconds");
         TakeScreen.takeScreenshot("contact_created");
-        Thread.sleep(3000);
+
     }
     @Test
     public void phoneBookTest_001() throws InterruptedException {
         MainPage mainPage = new MainPage(getDriver());
         LoginPage loginPage = mainPage.openTopMenu(TopMenuItem.LOGIN.toString());
         loginPage.fillEmailField("sherk@mail.com").clickRegistrationButton();
-        Thread.sleep(3000);
+
     }
     @Test(description = "The test checks the empty field warning declaration.")
     @Parameters("browser")
@@ -102,14 +102,14 @@ public class PhoneBookTest extends BaseTest {
 //            Assert.assertTrue(contactsPage.isElementPersist(getDriver().
 //                    findElement(By.xpath("//button[contains(text(),'Sign Out')]"))));
 
-            Thread.sleep(2000);
+
         }
         else {
             String expectedString = "Wrong";
             boolean isAlertHandled = AlertHandler.handlerAlert(alert, expectedString); // creating true/false, that asks if alert was handled(alert, expected string it is the thing we wrote here for now)
             Assert.assertTrue(isAlertHandled);//assert its assert ...........
             TakeScreen.takeScreenshot("unSuccessful Registration");
-            Thread.sleep(2000);
+
         }
     }
     @Test
@@ -161,7 +161,7 @@ public class PhoneBookTest extends BaseTest {
                 BasePage.isElementPresent(getDriver().findElement(By.xpath("//h3[contains(text(),'"+phoneNumber+"')]"))));
 
         Allure.step("3 seconds and goes sleep");
-        Thread.sleep(3000);
+
     }
     @Test
     public void deleteContactApproachTwo() throws IOException {
